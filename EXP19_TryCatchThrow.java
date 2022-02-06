@@ -1,0 +1,27 @@
+public class EXP19_TryCatchThrow
+ {
+    public static void main(String args[])
+    {
+        try
+        {
+            int a=1/0;
+            a=a+10;
+        }
+        catch (ArithmeticException ae)
+        {
+            System.out.println("Caught exception from try:"+ae);
+            try
+            {
+                throw new ArrayIndexOutOfBoundsException();
+            }
+            catch (ArrayIndexOutOfBoundsException ai)
+            {
+                System.out.println("Caught exception from throw:"+ai);
+            }
+        }
+        finally 
+        {
+            System.out.println("I am in final block");
+        }
+    }
+}
